@@ -1,0 +1,22 @@
+{
+  "name": "dp-analytics",
+  "version": "1.0.0",
+  "description": "Differential Privacy Analytics API — Laplace/Gaussian mechanisms with Redis budget tracking and Kafka audit logging",
+  "module": "src/server.ts",
+  "scripts": {
+    "dev": "bun run --hot src/server.ts",
+    "start": "bun run src/server.ts",
+    "infra:up": "docker compose -f infra/docker-compose.yml up -d",
+    "infra:down": "docker compose -f infra/docker-compose.yml down",
+    "infra:logs": "docker compose -f infra/docker-compose.yml logs -f",
+    "demo": "bun run scripts/demo.ts"
+  },
+  "dependencies": {
+    "kafkajs": "^2.2.4",
+    "postgres": "^3.4.4",
+    "redis": "^4.6.13"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  }
+}
